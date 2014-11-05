@@ -14,6 +14,11 @@ int main(int argc, char** argv){
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.1, 0.0, 0.2)),
         ros::Time::now(),"base_link", "base_kinect"));
+
+broadcaster.sendTransform(
+      tf::StampedTransform(
+        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.1, 0.2, 0.3)),
+        ros::Time::now(),"map", "base_link"));
     r.sleep();
   }
 }
